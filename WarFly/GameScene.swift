@@ -21,16 +21,14 @@ class GameScene: SKScene {
         for _ in 1...5 {
             let x: CGFloat = CGFloat(GKRandomSource.sharedRandom().nextInt(upperBound: Int(screen.size.width)))
             let y: CGFloat = CGFloat(GKRandomSource.sharedRandom().nextInt(upperBound: Int(screen.size.height)))
-            let island = Island.populateIsland(at: CGPoint(x: x, y: y))
+            
+            let island = Island.populateSprite(at: CGPoint(x: x, y: y))
             self.addChild(island)
+            
+            let cloud = Cloud.populateSprite(at: CGPoint(x: x, y: y))
+            self.addChild(cloud)
         }
         
-//        let cat = SKSpriteNode(imageNamed: "CatVector")
-//        cat.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-//        cat.setScale(0.3)
-//        cat.zPosition = 1
-//        self.addChild(cat)
-        
     }
-
+    
 }

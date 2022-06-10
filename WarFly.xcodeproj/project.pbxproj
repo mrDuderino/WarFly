@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FB9529202847FEF8003C9DAC /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95291F2847FEF8003C9DAC /* Cloud.swift */; };
+		FBB873BC284CDFC600E63BF9 /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */; };
+		FBB873BE284CE08E00E63BF9 /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */; };
 		FBD4384D2846AAD400FD6D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4384C2846AAD400FD6D91 /* AppDelegate.swift */; };
 		FBD438532846AAD400FD6D91 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD438522846AAD400FD6D91 /* GameScene.swift */; };
 		FBD438552846AAD400FD6D91 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD438542846AAD400FD6D91 /* GameViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		FB95291F2847FEF8003C9DAC /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
+		FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
 		FBD438492846AAD400FD6D91 /* WarFly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WarFly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD4384C2846AAD400FD6D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD438522846AAD400FD6D91 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -66,10 +70,12 @@
 				FBD438632846B3BF00FD6D91 /* Background.swift */,
 				FBD438652846B73100FD6D91 /* Island.swift */,
 				FB95291F2847FEF8003C9DAC /* Cloud.swift */,
+				FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */,
 				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
 				FBD438562846AAD400FD6D91 /* Main.storyboard */,
 				FBD438592846AAD600FD6D91 /* Assets.xcassets */,
 				FBD4385B2846AAD600FD6D91 /* LaunchScreen.storyboard */,
+				FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */,
 			);
 			path = WarFly;
 			sourceTree = "<group>";
@@ -133,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD438582846AAD400FD6D91 /* Main.storyboard in Resources */,
+				FBB873BE284CE08E00E63BF9 /* PlayerPlane.atlas in Resources */,
 				FBD4385A2846AAD600FD6D91 /* Assets.xcassets in Resources */,
 				FBD4385D2846AAD600FD6D91 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -146,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD438532846AAD400FD6D91 /* GameScene.swift in Sources */,
+				FBB873BC284CDFC600E63BF9 /* PlayerPlane.swift in Sources */,
 				FB9529202847FEF8003C9DAC /* Cloud.swift in Sources */,
 				FBD438552846AAD400FD6D91 /* GameViewController.swift in Sources */,
 				FBD4384D2846AAD400FD6D91 /* AppDelegate.swift in Sources */,

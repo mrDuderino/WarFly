@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */; };
+		FB9477ED285A6267001F0290 /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9477EC285A6267001F0290 /* PowerUp.swift */; };
 		FB9529202847FEF8003C9DAC /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB95291F2847FEF8003C9DAC /* Cloud.swift */; };
 		FBB873BC284CDFC600E63BF9 /* PlayerPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */; };
 		FBB873BE284CE08E00E63BF9 /* PlayerPlane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
+		FB9477EC285A6267001F0290 /* PowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
+		FB9477EE285A632A001F0290 /* GreenPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = GreenPowerUp.atlas; sourceTree = "<group>"; };
 		FB95291F2847FEF8003C9DAC /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPlane.swift; sourceTree = "<group>"; };
 		FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlane.atlas; sourceTree = "<group>"; };
@@ -70,11 +75,14 @@
 				FBD438632846B3BF00FD6D91 /* Background.swift */,
 				FBD438652846B73100FD6D91 /* Island.swift */,
 				FB95291F2847FEF8003C9DAC /* Cloud.swift */,
+				FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */,
 				FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */,
+				FB9477EC285A6267001F0290 /* PowerUp.swift */,
 				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
 				FBD438562846AAD400FD6D91 /* Main.storyboard */,
 				FBD438592846AAD600FD6D91 /* Assets.xcassets */,
 				FBD4385B2846AAD600FD6D91 /* LaunchScreen.storyboard */,
+				FB9477EE285A632A001F0290 /* GreenPowerUp.atlas */,
 				FBB873BD284CE08E00E63BF9 /* PlayerPlane.atlas */,
 			);
 			path = WarFly;
@@ -158,6 +166,8 @@
 				FBD438552846AAD400FD6D91 /* GameViewController.swift in Sources */,
 				FBD4384D2846AAD400FD6D91 /* AppDelegate.swift in Sources */,
 				FBD438662846B73100FD6D91 /* Island.swift in Sources */,
+				FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */,
+				FB9477ED285A6267001F0290 /* PowerUp.swift in Sources */,
 				FBD438642846B3BF00FD6D91 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

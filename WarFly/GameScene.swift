@@ -23,12 +23,60 @@ class GameScene: SKScene {
         DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
             self.player.performFly()
         }
-
-        let powerUp = PowerUp()
-        powerUp.performRotation()
-        powerUp.position = CGPoint(x: self.size.width / 2,
-                                   y: self.size.height / 2)
-        self.addChild(powerUp)
+        spawnPowerUp()
+        //spawnEnemy(count: 5)
+        spawnEnemies()
+        
+    }
+    
+    fileprivate func spawnEnemies() {
+        let actionWait = SKAction.wait(forDuration: 3.0)
+        let spawnSpiralAction = SKAction.run { [unowned self] in
+            self.spawnSpiralOfEnemies()
+        }
+        self.run(SKAction.repeatForever(SKAction.sequence([actionWait, spawnSpiralAction])))
+    }
+    
+    fileprivate func spawnPowerUp() {
+        let spawnAction = SKAction.run {
+            let randomNumer = Int(arc4random_uniform(2))
+            let powerUp = randomNumer == 1 ? BluePowerUp() : GreenPowerUp()
+            let randomPositionX = Int(arc4random_uniform(UInt32(self.size.width - 30)))
+            powerUp.position = CGPoint(x: CGFloat(randomPositionX), y: self.size.height + 100)
+            powerUp.startMovement()
+            self.addChild(powerUp)
+        }
+        
+        let randomTimeSpawn = Double(arc4random_uniform(11) + 10)
+        let waitAction = SKAction.wait(forDuration: randomTimeSpawn)
+        
+        self.run(SKAction.repeatForever(SKAction.sequence([spawnAction, waitAction])))
+    }
+    
+    fileprivate func spawnSpiralOfEnemies() {
+        let enemyTextureAtlas1 = SKTextureAtlas(named: "Enemy_1")
+        let enemyTextureAtlas2 = SKTextureAtlas(named: "Enemy_2")
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
+            
+            let randomNumber = Int(arc4random_uniform(2))
+            let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
+            //Enemy.textureAtlas = arrayOfAtlases[randomNumber]
+            let textureAtlas = arrayOfAtlases[randomNumber]
+            
+            let waitAction = SKAction.wait(forDuration: 1.0)
+            let spawnEnemy = SKAction.run { [unowned self] in
+                let textureNames = textureAtlas.textureNames.sorted()
+                let texture = textureAtlas.textureNamed(textureNames[12])
+                let enemy = Enemy(enemyTexture: texture)
+                enemy.position = CGPoint(x: self.size.width / 2,
+                                         y: self.size.height + 110)
+                self.addChild(enemy)
+                enemy.flySpiral()
+            }
+            let spawnAction = SKAction.sequence([waitAction, spawnEnemy])
+            let repeatAction = SKAction.repeat(spawnAction, count: 3)
+            self.run(repeatAction)
+        }
     }
     
     fileprivate func spawnClouds() {
@@ -78,9 +126,12 @@ class GameScene: SKScene {
         
         player.checkPosition()
         
-        enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
-            if node.position.y < -199 {
+        enumerateChildNodes(withName: "sprite") { (node, stop) in
+            if node.position.y <= -100 {
                 node.removeFromParent()
+                if node.isKind(of: PowerUp.self) {
+                    print("powerUp is remove from scene")
+                }
             }
         }
     }

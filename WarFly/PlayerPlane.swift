@@ -47,11 +47,10 @@ class PlayerPlane: SKSpriteNode {
             if let data = data {
                 let acceleration = data.acceleration
                 self.xAcceleration = CGFloat(acceleration.x) * 0.7 + self.xAcceleration * 0.3
-                print(self.xAcceleration)
             }
         }
         
-        let planeWaitAction = SKAction.wait(forDuration: 0.25)
+        let planeWaitAction = SKAction.wait(forDuration: 0.15)
         let planeDirectionCheckAction = SKAction.run { [unowned self] in
             self.movementDirectionCheck()
         }
@@ -88,11 +87,11 @@ class PlayerPlane: SKSpriteNode {
     
     fileprivate func movementDirectionCheck() {
         
-        if xAcceleration > 0.01, moveDirection != .right, stillTurning == false {
+        if xAcceleration > 0.03, moveDirection != .right, stillTurning == false {
             stillTurning = true
             moveDirection = .right
             turnPlane(direction: .right)
-        } else if xAcceleration < -0.01, moveDirection != .left, stillTurning == false {
+        } else if xAcceleration < -0.03, moveDirection != .left, stillTurning == false {
             stillTurning = true
             moveDirection = .left
             turnPlane(direction: .left)

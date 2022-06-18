@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */; };
+		FB339423285CA7DB00D69B27 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339422285CA7DB00D69B27 /* Assets.swift */; };
+		FB339425285CD28500D69B27 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339424285CD28500D69B27 /* MenuScene.swift */; };
 		FB67E7AD285B7053003C196F /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB67E7AC285B7053003C196F /* Enemy.swift */; };
 		FB67E7AF285B70BB003C196F /* Enemy_1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FB67E7AE285B70BB003C196F /* Enemy_1.atlas */; };
 		FB67E7B1285B79FC003C196F /* Enemy_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FB67E7B0285B79FC003C196F /* Enemy_2.atlas */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
+		FB339422285CA7DB00D69B27 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		FB339424285CD28500D69B27 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FB67E7AC285B7053003C196F /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		FB67E7AE285B70BB003C196F /* Enemy_1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_1.atlas; sourceTree = "<group>"; };
 		FB67E7B0285B79FC003C196F /* Enemy_2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_2.atlas; sourceTree = "<group>"; };
@@ -103,8 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				FBD4384C2846AAD400FD6D91 /* AppDelegate.swift */,
+				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
 				FBD438522846AAD400FD6D91 /* GameScene.swift */,
-				FB67E7C3285BA95F003C196F /* YellowShot.swift */,
+				FB339424285CD28500D69B27 /* MenuScene.swift */,
 				FBD438632846B3BF00FD6D91 /* Background.swift */,
 				FBD438652846B73100FD6D91 /* Island.swift */,
 				FB95291F2847FEF8003C9DAC /* Cloud.swift */,
@@ -115,7 +120,8 @@
 				FB67E7B9285B8764003C196F /* GreenPowerUp.swift */,
 				FB67E7AC285B7053003C196F /* Enemy.swift */,
 				FB67E7C1285BA6C0003C196F /* Shot.swift */,
-				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
+				FB67E7C3285BA95F003C196F /* YellowShot.swift */,
+				FB339422285CA7DB00D69B27 /* Assets.swift */,
 				FBD438562846AAD400FD6D91 /* Main.storyboard */,
 				FBD438592846AAD600FD6D91 /* Assets.xcassets */,
 				FBD4385B2846AAD600FD6D91 /* LaunchScreen.storyboard */,
@@ -209,10 +215,12 @@
 				FB67E7B8285B8738003C196F /* BluePowerUp.swift in Sources */,
 				FBD4384D2846AAD400FD6D91 /* AppDelegate.swift in Sources */,
 				FBD438662846B73100FD6D91 /* Island.swift in Sources */,
+				FB339423285CA7DB00D69B27 /* Assets.swift in Sources */,
 				FB67E7AD285B7053003C196F /* Enemy.swift in Sources */,
 				FB67E7BA285B8764003C196F /* GreenPowerUp.swift in Sources */,
 				FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */,
 				FB9477ED285A6267001F0290 /* PowerUp.swift in Sources */,
+				FB339425285CD28500D69B27 /* MenuScene.swift in Sources */,
 				FB67E7C2285BA6C0003C196F /* Shot.swift in Sources */,
 				FBD438642846B3BF00FD6D91 /* Background.swift in Sources */,
 			);

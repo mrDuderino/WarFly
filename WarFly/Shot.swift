@@ -24,7 +24,7 @@ class Shot: SKSpriteNode {
         super.init(texture: texture, color: .clear, size: initialSize)
         self.name = "shotSprite"
         self.zPosition = 30
-        self.setScale(0.7)
+        self.setScale(0.3)
     }
     
     func startMovement() {

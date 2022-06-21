@@ -11,8 +11,10 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    fileprivate var player: PlayerPlane!
+    fileprivate let hud = HUD()
+    fileprivate let screenSize = UIScreen.main.bounds.size
 
-    var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
         
@@ -22,12 +24,16 @@ class GameScene: SKScene {
         configureStartScene()
         spawnClouds()
         spawnIslands()
-        let deadline = DispatchTime.now() + .nanoseconds(1)
-        DispatchQueue.main.asyncAfter(deadline: deadline) { [unowned self] in
-            self.player.performFly()
-        }
+        self.player.performFly()
         spawnPowerUp()
         spawnEnemies()
+        createHUD()
+        
+    }
+    
+    fileprivate func createHUD() {
+        addChild(hud)
+        hud.configureUI(screenSize: screenSize)
         
     }
     
@@ -155,21 +161,33 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
+        let contactCaregory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
         
-        let bodyA = contact.bodyA.categoryBitMask
-        let bodyB = contact.bodyB.categoryBitMask
-        let player = BitMaskCategory.player
-        let enemy = BitMaskCategory.enemy
-        let powerUp = BitMaskCategory.powerUp
-        let shot = BitMaskCategory.shot
-        
-        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy {
+        switch contactCaregory {
+        case [.enemy, .player]:
             print("enemy vs player")
-        } else if bodyA == player && bodyB == powerUp || bodyB == player && bodyA == powerUp {
+        case [.player, .powerUp]:
             print("player vs powerUp")
-        } else if bodyA == enemy && bodyB == shot || bodyB == enemy && bodyA == shot {
+        case [.enemy, .shot]:
             print("enemy vs shot")
+        default:
+            preconditionFailure("Unable to detect collision category")
         }
+        
+//        let bodyA = contact.bodyA.categoryBitMask
+//        let bodyB = contact.bodyB.categoryBitMask
+//        let player = BitMaskCategory.player
+//        let enemy = BitMaskCategory.enemy
+//        let powerUp = BitMaskCategory.powerUp
+//        let shot = BitMaskCategory.shot
+//
+//        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy {
+//            print("enemy vs player")
+//        } else if bodyA == player && bodyB == powerUp || bodyB == player && bodyA == powerUp {
+//            print("player vs powerUp")
+//        } else if bodyA == enemy && bodyB == shot || bodyB == enemy && bodyA == shot {
+//            print("enemy vs shot")
+//        }
         
     }
     

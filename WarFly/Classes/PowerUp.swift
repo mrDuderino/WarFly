@@ -1,16 +1,15 @@
 //
-//  Shot.swift
+//  PowerUp.swift
 //  WarFly
 //
-//  Created by Vladimir Strepitov on 16.06.2022.
+//  Created by Vladimir Strepitov on 15.06.2022.
 //
 
 import SpriteKit
 
-class Shot: SKSpriteNode {
+class PowerUp: SKSpriteNode {
     
-    let screenSize = UIScreen.main.bounds
-    let initialSize = CGSize(width: 187, height: 237)
+    let initialSize = CGSize(width: 52, height: 52)
     let textureAtlas: SKTextureAtlas!
     var textureNameBeginWith = ""
     var animationSpriteArray = [SKTexture]()
@@ -22,26 +21,26 @@ class Shot: SKSpriteNode {
         textureNameBeginWith = String(textureName.dropLast(6)) // 01.png
         let texture = textureAtlas.textureNamed(textureName)
         super.init(texture: texture, color: .clear, size: initialSize)
-        self.name = "shotSprite"
-        self.zPosition = 30
-        self.setScale(0.3)
+        self.name = "sprite"
+        self.zPosition = 20
+        self.setScale(0.5)
         
         // Physics
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
-        self.physicsBody?.isDynamic = false
-        self.physicsBody?.categoryBitMask = BitMaskCategory.shot
-        self.physicsBody?.collisionBitMask = BitMaskCategory.enemy
-        self.physicsBody?.contactTestBitMask = BitMaskCategory.enemy
+        self.physicsBody?.isDynamic = true
+        self.physicsBody?.categoryBitMask = BitMaskCategory.powerUp.rawValue
+        self.physicsBody?.collisionBitMask = BitMaskCategory.player.rawValue
+        self.physicsBody?.contactTestBitMask = BitMaskCategory.player.rawValue
     }
     
     func startMovement() {
         performRotation()
-        let moveForward = SKAction.moveTo(y: screenSize.height + 100, duration: 2)
+        let moveForward = SKAction.moveTo(y: -100, duration: 5)
         self.run(moveForward)
     }
     
-    fileprivate func performRotation()  {
-        for i in 1...32 {
+    fileprivate func performRotation() {
+        for i in 1...15 {
             let number = String(format: "%02d", i)
             let texture = SKTexture(imageNamed: textureNameBeginWith + String(number))
             animationSpriteArray.append(texture)

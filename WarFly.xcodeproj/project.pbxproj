@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB274CFB28620064001801B5 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274CFA28620064001801B5 /* HUD.swift */; };
 		FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */; };
 		FB339423285CA7DB00D69B27 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339422285CA7DB00D69B27 /* Assets.swift */; };
 		FB339425285CD28500D69B27 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339424285CD28500D69B27 /* MenuScene.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB274CFA28620064001801B5 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
 		FB339422285CA7DB00D69B27 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		FB339424285CD28500D69B27 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -76,6 +78,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB274CFC28620295001801B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4384C2846AAD400FD6D91 /* AppDelegate.swift */,
+				FBD438562846AAD400FD6D91 /* Main.storyboard */,
+				FBD438592846AAD600FD6D91 /* Assets.xcassets */,
+				FBD4385B2846AAD600FD6D91 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB274CFD286202B3001801B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FB274CFE286202FC001801B5 /* Protocols + Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */,
+			);
+			path = "Protocols + Extension";
+			sourceTree = "<group>";
+		};
+		FB274CFF28620341001801B5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB274CFA28620064001801B5 /* HUD.swift */,
+				FBD438632846B3BF00FD6D91 /* Background.swift */,
+				FBD438652846B73100FD6D91 /* Island.swift */,
+				FB95291F2847FEF8003C9DAC /* Cloud.swift */,
+				FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */,
+				FB9477EC285A6267001F0290 /* PowerUp.swift */,
+				FB67E7B7285B8738003C196F /* BluePowerUp.swift */,
+				FB67E7B9285B8764003C196F /* GreenPowerUp.swift */,
+				FB67E7AC285B7053003C196F /* Enemy.swift */,
+				FB67E7C1285BA6C0003C196F /* Shot.swift */,
+				FB67E7C3285BA95F003C196F /* YellowShot.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FB274D0028620351001801B5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FB339422285CA7DB00D69B27 /* Assets.swift */,
+				FBE35E56285E477D00D00F5C /* BitMaskCategory.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FB274D0128620367001801B5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FBD438522846AAD400FD6D91 /* GameScene.swift */,
+				FB339424285CD28500D69B27 /* MenuScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		FB67E7C0285BA670003C196F /* Atlases */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,26 +173,12 @@
 		FBD4384B2846AAD400FD6D91 /* WarFly */ = {
 			isa = PBXGroup;
 			children = (
-				FBD4384C2846AAD400FD6D91 /* AppDelegate.swift */,
-				FBD438542846AAD400FD6D91 /* GameViewController.swift */,
-				FBD438522846AAD400FD6D91 /* GameScene.swift */,
-				FB339424285CD28500D69B27 /* MenuScene.swift */,
-				FB339422285CA7DB00D69B27 /* Assets.swift */,
-				FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */,
-				FBE35E56285E477D00D00F5C /* BitMaskCategory.swift */,
-				FBD438632846B3BF00FD6D91 /* Background.swift */,
-				FBD438652846B73100FD6D91 /* Island.swift */,
-				FB95291F2847FEF8003C9DAC /* Cloud.swift */,
-				FBB873BB284CDFC600E63BF9 /* PlayerPlane.swift */,
-				FB9477EC285A6267001F0290 /* PowerUp.swift */,
-				FB67E7B7285B8738003C196F /* BluePowerUp.swift */,
-				FB67E7B9285B8764003C196F /* GreenPowerUp.swift */,
-				FB67E7AC285B7053003C196F /* Enemy.swift */,
-				FB67E7C1285BA6C0003C196F /* Shot.swift */,
-				FB67E7C3285BA95F003C196F /* YellowShot.swift */,
-				FBD438562846AAD400FD6D91 /* Main.storyboard */,
-				FBD438592846AAD600FD6D91 /* Assets.xcassets */,
-				FBD4385B2846AAD600FD6D91 /* LaunchScreen.storyboard */,
+				FB274D0128620367001801B5 /* Scenes */,
+				FB274D0028620351001801B5 /* Managers */,
+				FB274CFF28620341001801B5 /* Classes */,
+				FB274CFD286202B3001801B5 /* Controllers */,
+				FB274CFE286202FC001801B5 /* Protocols + Extension */,
+				FB274CFC28620295001801B5 /* Supporting Files */,
 				FB67E7C0285BA670003C196F /* Atlases */,
 			);
 			path = WarFly;
@@ -225,6 +276,7 @@
 				FB9477ED285A6267001F0290 /* PowerUp.swift in Sources */,
 				FBE35E57285E477D00D00F5C /* BitMaskCategory.swift in Sources */,
 				FB339425285CD28500D69B27 /* MenuScene.swift in Sources */,
+				FB274CFB28620064001801B5 /* HUD.swift in Sources */,
 				FB67E7C2285BA6C0003C196F /* Shot.swift in Sources */,
 				FBD438642846B3BF00FD6D91 /* Background.swift in Sources */,
 			);

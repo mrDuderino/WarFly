@@ -16,17 +16,17 @@ class Enemy: SKSpriteNode {
     init(enemyTexture: SKTexture) {
         let texture = enemyTexture
         super.init(texture: texture, color: .clear, size: initialSize)
-        self.xScale = 0.5
-        self.yScale = -0.5
+        self.xScale = 0.375
+        self.yScale = -0.375
         self.name = "sprite"
         self.zPosition = 20
         
         // Physics
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
         self.physicsBody?.isDynamic = true
-        self.physicsBody?.categoryBitMask = BitMaskCategory.enemy
-        self.physicsBody?.collisionBitMask = BitMaskCategory.player | BitMaskCategory.shot
-        self.physicsBody?.contactTestBitMask = BitMaskCategory.player | BitMaskCategory.shot
+        self.physicsBody?.categoryBitMask = BitMaskCategory.enemy.rawValue
+        self.physicsBody?.collisionBitMask = BitMaskCategory.player.rawValue | BitMaskCategory.shot.rawValue
+        self.physicsBody?.contactTestBitMask = BitMaskCategory.player.rawValue | BitMaskCategory.shot.rawValue
     }
     
     func flySpiral() {

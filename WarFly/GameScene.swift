@@ -16,6 +16,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector.zero
+        
         configureStartScene()
         spawnClouds()
         spawnIslands()
@@ -24,7 +27,6 @@ class GameScene: SKScene {
             self.player.performFly()
         }
         spawnPowerUp()
-        //spawnEnemy(count: 5)
         spawnEnemies()
         
     }
@@ -60,7 +62,6 @@ class GameScene: SKScene {
             
             let randomNumber = Int(arc4random_uniform(2))
             let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
-            //Enemy.textureAtlas = arrayOfAtlases[randomNumber]
             let textureAtlas = arrayOfAtlases[randomNumber]
             
             let waitAction = SKAction.wait(forDuration: 1.0)
@@ -151,7 +152,31 @@ class GameScene: SKScene {
 }
 
 
-
+extension GameScene: SKPhysicsContactDelegate {
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        let bodyA = contact.bodyA.categoryBitMask
+        let bodyB = contact.bodyB.categoryBitMask
+        let player = BitMaskCategory.player
+        let enemy = BitMaskCategory.enemy
+        let powerUp = BitMaskCategory.powerUp
+        let shot = BitMaskCategory.shot
+        
+        if bodyA == player && bodyB == enemy || bodyB == player && bodyA == enemy {
+            print("enemy vs player")
+        } else if bodyA == player && bodyB == powerUp || bodyB == player && bodyA == powerUp {
+            print("player vs powerUp")
+        } else if bodyA == enemy && bodyB == shot || bodyB == enemy && bodyA == shot {
+            print("enemy vs shot")
+        }
+        
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        
+    }
+}
 
 
 

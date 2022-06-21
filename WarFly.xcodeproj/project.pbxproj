@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FB274CFB28620064001801B5 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274CFA28620064001801B5 /* HUD.swift */; };
+		FB274D0328620608001801B5 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D0228620608001801B5 /* ButtonNode.swift */; };
+		FB274D0528620E8A001801B5 /* PauseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D0428620E8A001801B5 /* PauseScene.swift */; };
+		FB274D072862130C001801B5 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D062862130C001801B5 /* SceneManager.swift */; };
 		FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */; };
 		FB339423285CA7DB00D69B27 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339422285CA7DB00D69B27 /* Assets.swift */; };
 		FB339425285CD28500D69B27 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339424285CD28500D69B27 /* MenuScene.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		FB274CFA28620064001801B5 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		FB274D0228620608001801B5 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		FB274D0428620E8A001801B5 /* PauseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseScene.swift; sourceTree = "<group>"; };
+		FB274D062862130C001801B5 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
 		FB339422285CA7DB00D69B27 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		FB339424285CD28500D69B27 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		FB274CFF28620341001801B5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FB274D0228620608001801B5 /* ButtonNode.swift */,
 				FB274CFA28620064001801B5 /* HUD.swift */,
 				FBD438632846B3BF00FD6D91 /* Background.swift */,
 				FBD438652846B73100FD6D91 /* Island.swift */,
@@ -128,6 +135,7 @@
 			children = (
 				FB339422285CA7DB00D69B27 /* Assets.swift */,
 				FBE35E56285E477D00D00F5C /* BitMaskCategory.swift */,
+				FB274D062862130C001801B5 /* SceneManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -135,8 +143,9 @@
 		FB274D0128620367001801B5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FBD438522846AAD400FD6D91 /* GameScene.swift */,
 				FB339424285CD28500D69B27 /* MenuScene.swift */,
+				FBD438522846AAD400FD6D91 /* GameScene.swift */,
+				FB274D0428620E8A001801B5 /* PauseScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -271,14 +280,17 @@
 				FBD438662846B73100FD6D91 /* Island.swift in Sources */,
 				FB339423285CA7DB00D69B27 /* Assets.swift in Sources */,
 				FB67E7AD285B7053003C196F /* Enemy.swift in Sources */,
+				FB274D072862130C001801B5 /* SceneManager.swift in Sources */,
 				FB67E7BA285B8764003C196F /* GreenPowerUp.swift in Sources */,
 				FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */,
 				FB9477ED285A6267001F0290 /* PowerUp.swift in Sources */,
 				FBE35E57285E477D00D00F5C /* BitMaskCategory.swift in Sources */,
 				FB339425285CD28500D69B27 /* MenuScene.swift in Sources */,
+				FB274D0528620E8A001801B5 /* PauseScene.swift in Sources */,
 				FB274CFB28620064001801B5 /* HUD.swift in Sources */,
 				FB67E7C2285BA6C0003C196F /* Shot.swift in Sources */,
 				FBD438642846B3BF00FD6D91 /* Background.swift in Sources */,
+				FB274D0328620608001801B5 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

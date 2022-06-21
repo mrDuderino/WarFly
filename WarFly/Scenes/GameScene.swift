@@ -178,14 +178,28 @@ extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         let contactCaregory: BitMaskCategory = [contact.bodyA.category, contact.bodyB.category]
+        let explosion = SKEmitterNode(fileNamed: "EnemyExplosion")
+        let contactPoint = contact.contactPoint
+        explosion?.position = contactPoint
+        let waitForExplosionAction = SKAction.wait(forDuration: 1.0)
+        //let explosionAction = SKAction.
         
         switch contactCaregory {
         case [.enemy, .player]:
-            print("enemy vs player")
+            if contact.bodyA.node?.name == "sprite" {
+                contact.bodyA.node?.removeFromParent()
+            } else {
+                contact.bodyB.node?.removeFromParent()
+            }
+            addChild(explosion!)
+            self.run(waitForExplosionAction) { explosion?.removeFromParent() }
         case [.player, .powerUp]:
             print("player vs powerUp")
         case [.enemy, .shot]:
-            print("enemy vs shot")
+            contact.bodyA.node?.removeFromParent()
+            contact.bodyB.node?.removeFromParent()
+            addChild(explosion!)
+            self.run(waitForExplosionAction) { explosion?.removeFromParent() }
         default:
             preconditionFailure("Unable to detect collision category")
         }

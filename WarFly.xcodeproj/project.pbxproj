@@ -14,6 +14,8 @@
 		FB274D0928621A9C001801B5 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D0828621A9C001801B5 /* ParentScene.swift */; };
 		FB274D0B28622540001801B5 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D0A28622540001801B5 /* OptionsScene.swift */; };
 		FB274D0D28623641001801B5 /* BestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB274D0C28623641001801B5 /* BestScene.swift */; };
+		FB274D1028626DA7001801B5 /* EnemyExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB274D0E28626DA7001801B5 /* EnemyExplosion.sks */; };
+		FB274D1128626DA7001801B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB274D0F28626DA7001801B5 /* Assets.xcassets */; };
 		FB2D8EEF2853A53100003DCE /* GameBackgroundSpriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */; };
 		FB339423285CA7DB00D69B27 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339422285CA7DB00D69B27 /* Assets.swift */; };
 		FB339425285CD28500D69B27 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB339424285CD28500D69B27 /* MenuScene.swift */; };
@@ -50,6 +52,8 @@
 		FB274D0828621A9C001801B5 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		FB274D0A28622540001801B5 /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		FB274D0C28623641001801B5 /* BestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScene.swift; sourceTree = "<group>"; };
+		FB274D0E28626DA7001801B5 /* EnemyExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemyExplosion.sks; sourceTree = "<group>"; };
+		FB274D0F28626DA7001801B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2D8EEE2853A53100003DCE /* GameBackgroundSpriteable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundSpriteable.swift; sourceTree = "<group>"; };
 		FB339422285CA7DB00D69B27 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		FB339424285CD28500D69B27 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -152,11 +156,20 @@
 				FB274D0828621A9C001801B5 /* ParentScene.swift */,
 				FB339424285CD28500D69B27 /* MenuScene.swift */,
 				FBD438522846AAD400FD6D91 /* GameScene.swift */,
+				FB274D0F28626DA7001801B5 /* Assets.xcassets */,
 				FB274D0428620E8A001801B5 /* PauseScene.swift */,
 				FB274D0A28622540001801B5 /* OptionsScene.swift */,
 				FB274D0C28623641001801B5 /* BestScene.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FB274D1228626DB1001801B5 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				FB274D0E28626DA7001801B5 /* EnemyExplosion.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		FB67E7C0285BA670003C196F /* Atlases */ = {
@@ -191,6 +204,7 @@
 		FBD4384B2846AAD400FD6D91 /* WarFly */ = {
 			isa = PBXGroup;
 			children = (
+				FB274D1228626DB1001801B5 /* Particles */,
 				FB274D0128620367001801B5 /* Scenes */,
 				FB274D0028620351001801B5 /* Managers */,
 				FB274CFF28620341001801B5 /* Classes */,
@@ -262,10 +276,12 @@
 			files = (
 				FB67E7B1285B79FC003C196F /* Enemy_2.atlas in Resources */,
 				FB67E7AF285B70BB003C196F /* Enemy_1.atlas in Resources */,
+				FB274D1128626DA7001801B5 /* Assets.xcassets in Resources */,
 				FBD438582846AAD400FD6D91 /* Main.storyboard in Resources */,
 				FB67E7BC285B8C01003C196F /* YellowAmmo.atlas in Resources */,
 				FBB873BE284CE08E00E63BF9 /* PlayerPlane.atlas in Resources */,
 				FBD4385A2846AAD600FD6D91 /* Assets.xcassets in Resources */,
+				FB274D1028626DA7001801B5 /* EnemyExplosion.sks in Resources */,
 				FB67E7B6285B868B003C196F /* BluePowerUp.atlas in Resources */,
 				FB67E7BF285B8C7B003C196F /* GreenPowerUp.atlas in Resources */,
 				FBD4385D2846AAD600FD6D91 /* LaunchScreen.storyboard in Resources */,

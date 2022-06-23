@@ -24,13 +24,13 @@ class Shot: SKSpriteNode {
         super.init(texture: texture, color: .clear, size: initialSize)
         self.name = "shotSprite"
         self.zPosition = 30
-        self.setScale(0.16)
+        self.setScale(0.25)
         
         // Physics
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
         self.physicsBody?.isDynamic = false
         self.physicsBody?.categoryBitMask = BitMaskCategory.shot.rawValue
-        self.physicsBody?.collisionBitMask = BitMaskCategory.enemy.rawValue
+        self.physicsBody?.collisionBitMask = BitMaskCategory.none.rawValue
         self.physicsBody?.contactTestBitMask = BitMaskCategory.enemy.rawValue
     }
     

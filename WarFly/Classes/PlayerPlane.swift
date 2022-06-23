@@ -23,7 +23,7 @@ class PlayerPlane: SKSpriteNode {
     static func populate(at point: CGPoint) -> PlayerPlane {
         let playerPlaneTexture = Assets.shared.playerPlaneAtlas.textureNamed("airplane_3ver2_13")
         let playerPlane = PlayerPlane(texture: playerPlaneTexture)
-        playerPlane.setScale(0.375)
+        playerPlane.setScale(0.45)
         playerPlane.position = point
         playerPlane.zPosition = 40
         
@@ -50,7 +50,7 @@ class PlayerPlane: SKSpriteNode {
     func performFly() {
 
         preloadTextureArrays()
-        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.accelerometerUpdateInterval = 0.1
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { [unowned self] (data, error) in
             if let data = data {
                 let acceleration = data.acceleration
@@ -58,7 +58,7 @@ class PlayerPlane: SKSpriteNode {
             }
         }
         
-        let planeWaitAction = SKAction.wait(forDuration: 0.15)
+        let planeWaitAction = SKAction.wait(forDuration: 0.1)
         let planeDirectionCheckAction = SKAction.run { [unowned self] in
             self.movementDirectionCheck()
         }
@@ -125,6 +125,14 @@ class PlayerPlane: SKSpriteNode {
         self.run(sequenceAction) { [unowned self] in
             self.stillTurning = false
         }
+    }
+    
+    func colorPowerUp(withColor color: UIColor) {
+        let colorAction = SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0.2)
+        let uncolorAction = SKAction.colorize(with: color, colorBlendFactor: 0.0, duration: 0.2)
+        let sequenceAction = SKAction.sequence([colorAction, uncolorAction])
+        let repeatAction = SKAction.repeat(sequenceAction, count: 5)
+        self.run(repeatAction)
     }
 }
 

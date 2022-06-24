@@ -33,6 +33,7 @@ class GameOverScene: ParentScene {
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
         } else if node.name == "options" {
+            gameSettings.loadGameSettings()
             let transition = SKTransition.crossFade(withDuration: 1.0)
             let optionsScene = OptionsScene(size: self.size)
             optionsScene.backScene = self

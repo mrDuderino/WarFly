@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: ParentScene {
     
+    var backgroundMusic: SKAudioNode!
+    
     fileprivate var player: PlayerPlane!
     fileprivate let hud = HUD()
     fileprivate let screenSize = UIScreen.main.bounds.size
@@ -37,7 +39,13 @@ class GameScene: ParentScene {
 
     
     override func didMove(to view: SKView) {
-        
+        gameSettings.loadGameSettings()
+        if gameSettings.isMusic && backgroundMusic == nil {
+            if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "m4a") {
+                backgroundMusic = SKAudioNode(url: musicURL)
+                addChild(backgroundMusic)
+            }
+        }
         self.scene?.isPaused = false
         guard sceneManager.gameScene == nil else { return }
         sceneManager.gameScene = self
@@ -259,13 +267,14 @@ extension GameScene: SKPhysicsContactDelegate {
                     player.colorPowerUp(withColor: .blue)
                 }
             }
-              
-            //addChild(explosion!)
-            //self.run(waitForExplosionAction) { explosion?.removeFromParent() }
+            
         case [.enemy, .shot]:
             if contact.bodyA.node?.parent != nil && contact.bodyB.node?.parent != nil {
                 contact.bodyA.node?.removeFromParent()
                 contact.bodyB.node?.removeFromParent()
+                if gameSettings.isSound {
+                    self.run(SKAction.playSoundFileNamed("hitSound", waitForCompletion: false))
+                }
                 hud.score += 5
                 addChild(explosion!)
                 self.run(waitForExplosionAction) { explosion?.removeFromParent() }

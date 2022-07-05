@@ -40,11 +40,14 @@ class GameScene: ParentScene {
     
     override func didMove(to view: SKView) {
         gameSettings.loadGameSettings()
+        
         if gameSettings.isMusic && backgroundMusic == nil {
             if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "m4a") {
                 backgroundMusic = SKAudioNode(url: musicURL)
                 addChild(backgroundMusic)
             }
+        } else if gameSettings.isMusic == false && backgroundMusic != nil {
+            backgroundMusic.removeFromParent()
         }
         self.scene?.isPaused = false
         guard sceneManager.gameScene == nil else { return }
@@ -238,6 +241,8 @@ extension GameScene: SKPhysicsContactDelegate {
             addChild(explosion!)
             self.run(waitForExplosionAction) { explosion?.removeFromParent() }
             if lives == 0 {
+                gameSettings.currentScore = hud.score
+                gameSettings.saveScores()
                 let gameOverScene = GameOverScene(size: self.size)
                 let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
                 gameOverScene.scaleMode = .aspectFill

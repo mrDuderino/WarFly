@@ -58,7 +58,7 @@ class PlayerPlane: SKSpriteNode {
             }
         }
         
-        let planeWaitAction = SKAction.wait(forDuration: 0.1)
+        let planeWaitAction = SKAction.wait(forDuration: 0.2)
         let planeDirectionCheckAction = SKAction.run { [unowned self] in
             self.movementDirectionCheck()
         }

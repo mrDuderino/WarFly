@@ -13,7 +13,6 @@ class OptionsScene: ParentScene {
     var isSound: Bool!
     
     override func didMove(to view: SKView) {
-        gameSettings.loadGameSettings()
         
         isMusic = gameSettings.isMusic
         isSound = gameSettings.isSound
